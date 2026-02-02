@@ -1,0 +1,25 @@
+{
+  "id": "sql_top_salaries",
+  "language": "sql",
+  "title": "Department Top Earners",
+  "description": "Write a query to find the top 3 highest paid employees in each department.\n\nTable: employees\nColumns: id, name, salary, department_id\n\nYour query should return department_id and salary, ordered by department_id (ascending) and then salary (descending).\n\nNote: If a department has fewer than 3 employees, return all of them.",
+  "starter_code": "SELECT department_id, salary\nFROM employees\nWHERE -- your solution here",
+  "entry_point": "query",
+  "setup_sql": "CREATE TABLE employees (id INT, name VARCHAR(50), salary INT, department_id INT); INSERT INTO employees VALUES (1, 'Alice', 90000, 1), (2, 'Bob', 80000, 1), (3, 'Charlie', 85000, 1), (4, 'David', 95000, 1), (5, 'Eve', 70000, 2), (6, 'Frank', 75000, 2), (7, 'Grace', 72000, 2);",
+  "public_tests": [
+    {
+      "expected_output": "1|95000\n1|90000\n1|85000\n2|75000\n2|72000\n2|70000",
+      "description": "top 3 from each dept"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "setup_sql": "CREATE TABLE employees (id INT, name VARCHAR(50), salary INT, department_id INT); INSERT INTO employees VALUES (1, 'John', 100000, 1), (2, 'Jane', 120000, 1), (3, 'Mike', 80000, 2), (4, 'Sarah', 90000, 2), (5, 'Tom', 85000, 2), (6, 'Lisa', 95000, 2);",
+      "expected_output": "1|120000\n1|100000\n2|95000\n2|90000\n2|85000"
+    }
+  ],
+  "limits": {
+    "time_seconds": 5,
+    "memory_mb": 128
+  }
+}

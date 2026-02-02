@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./database:/app/database
+      - ./assignments:/assignments
+      - /var/run/docker.sock:/var/run/docker.sock  # needed for executor to spawn containers
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - edgelab
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api:5000  
+    networks:
+      - edgelab
+
+networks:
+  edgelab:
+    driver: bridge
