@@ -1,0 +1,38 @@
+{
+  "id": "python_two_sum",
+  "language": "python",
+  "title": "Two Sum",
+  "description": "Given an array of integers and a target, return the indices of two numbers that add up to the target.\n\nYou can assume there's exactly one solution, and you can't use the same element twice.\n\nExample:\nInput: nums = [2, 7, 11, 15], target = 9\nOutput: [0, 1]\nExplanation: nums[0] + nums[1] = 2 + 7 = 9",
+  "starter_code": "def solution(nums, target):\n    # write your code here\n    pass",
+  "entry_point": "solution",
+  "public_tests": [
+    {
+      "input": [[2, 7, 11, 15], 9],
+      "expected_output": [0, 1],
+      "description": "basic case"
+    },
+    {
+      "input": [[3, 2, 4], 6],
+      "expected_output": [1, 2],
+      "description": "answer not at start"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [[3, 3], 6],
+      "expected_output": [0, 1]
+    },
+    {
+      "input": [[-1, -2, -3, -4, -5], -8],
+      "expected_output": [2, 4]
+    },
+    {
+      "input": [[1, 5, 3, 7, 9, 2], 10],
+      "expected_output": [1, 3]
+    }
+  ],
+  "limits": {
+    "time_seconds": 5,
+    "memory_mb": 128
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "java_palindrome",
+  "language": "java",
+  "title": "Valid Palindrome",
+  "description": "Check if a string is a valid palindrome. Ignore spaces, punctuation, and case.\n\nA palindrome reads the same forwards and backwards.\n\nExamples:\n- \"racecar\" -> true\n- \"hello\" -> false  \n- \"A man a plan a canal Panama\" -> true (ignoring spaces and case)",
+  "starter_code": "public class Solution {\n    public static boolean isPalindrome(String s) {\n        // your code here\n        return false;\n    }\n}",
+  "entry_point": "Solution.isPalindrome",
+  "public_tests": [
+    {
+      "input": ["racecar"],
+      "expected_output": true,
+      "description": "simple palindrome"
+    },
+    {
+      "input": ["hello"],
+      "expected_output": false,
+      "description": "not a palindrome"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": ["A man a plan a canal Panama"],
+      "expected_output": true
+    },
+    {
+      "input": ["race a car"],
+      "expected_output": false
+    },
+    {
+      "input": ["Was it a car or a cat I saw"],
+      "expected_output": true
+    }
+  ],
+  "limits": {
+    "time_seconds": 5,
+    "memory_mb": 256
+  }
+}
